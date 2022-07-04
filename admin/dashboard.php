@@ -136,7 +136,7 @@ $totalclasses=$query2->rowCount();
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                         <a class="dashboard-stat bg-primary" href="manage-classes.php">
                                         <?php 
-$sql2 ="SELECT id from  attendance ";
+$sql2 ="SELECT id from  members where dod = '1'";
 $query2 = $dbh -> prepare($sql2);
 $query2->execute();
 $results2=$query2->fetchAll(PDO::FETCH_OBJ);

@@ -8,6 +8,15 @@ if(strlen($_SESSION['alogin'])=="")
     header("Location: index.php"); 
     }
     else{
+        if(isset($_GET['died'])){
+            $id=intval($_GET['died']);
+            $sql = "update members set dod = '1' where id = '$id'";
+            $dbh->exec($sql);
+            header('location:manage-member.php');   
+        }   
+        
+$table = 'members'; 
+include('export.php');
 
 ?>
 <!DOCTYPE html>
@@ -85,9 +94,16 @@ if(strlen($_SESSION['alogin'])=="")
                                     <div class="col-md-12">
 
                                         <div class="panel">
-                                            <div class="panel-heading">
+                                            <div class="panel-heading bg-primary">
                                                 <div class="panel-title">
                                                     <h5>View Students Info</h5>
+                                                    <div class="well-sm col-sm-12">
+                                                        <div class="btn-group pull-right">	
+                                                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">					
+                                                                <button type="submit" id="export_data" name='export_data' value="Export to excel" class="btn btn-info">Export to excel</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>	
                                                 </div>
                                             </div>
                             <?php if($msg){?>
@@ -117,7 +133,8 @@ if(strlen($_SESSION['alogin'])=="")
                                                     </thead>
                                                    
                                                     <tbody>
-                    <?php $sql = "SELECT * from members";
+                    <?php 
+                    $sql = "SELECT * from members where dod = '0'";
                     $query = $dbh->prepare($sql);
                     $query->execute();
                     $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -145,6 +162,7 @@ if(strlen($_SESSION['alogin'])=="")
 <td>
     <a href="edit-member.php?id=<?php echo htmlentities($result->id);?>" class="btn btn-warning">Edit</a>
     <a href="delete_member.php?id=<?php echo htmlentities($result->id);?>" class="btn btn-danger">Delete</a>
+    <a href="manage-member.php?died=<?php echo htmlentities($result->id);?>" class="btn btn-primary">Died</a>
 </td>
 
 </tr>

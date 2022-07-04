@@ -1,20 +1,20 @@
 <?php
 include('includes/config.php');
-if(!empty($_POST["classid"])) 
+if(!empty($_POST["id"])) 
 {
- $cid=intval($_POST['classid']);
+ $cid=intval($_POST['id']);
  if(!is_numeric($cid)){
  
  	echo htmlentities("invalid Class");exit;
  }
  else{
- $stmt = $dbh->prepare("SELECT StudentName,StudentId FROM tblstudents WHERE ClassId= :id order by StudentName");
+ $stmt = $dbh->prepare("SELECT * FROM members WHERE phone_number = :id");
  $stmt->execute(array(':id' => $cid));
  ?><option value="">Select Category </option><?php
  while($row=$stmt->fetch(PDO::FETCH_ASSOC))
  {
   ?>
-  <option value="<?php echo htmlentities($row['StudentId']); ?>"><?php echo htmlentities($row['StudentName']); ?></option>
+  <option value="<?php echo htmlentities($row['id']); ?>"><?php echo htmlentities($row['first_name'].' '.$row['last_name']); ?></option>
   <?php
  }
 }

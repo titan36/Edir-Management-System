@@ -2,7 +2,7 @@
 $dbuser="root";
 $dbpass="";
 $host="localhost";
-$dbname = "srms";
-$dbh = new mysqli($host, $dbuser, $dbpass, $dbname);
+$dbname = "edir";
+$db = mysqli_connect($host, $dbuser, $dbpass, $dbname);
 
 ?>

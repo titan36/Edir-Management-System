@@ -14,7 +14,8 @@ if(strlen($_SESSION['alogin'])=="")
         $dbh->exec($sql);
         header('location:manage-role.php');   
     }     
-
+    $table = 'role'; 
+    include('export.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,9 +88,16 @@ if(strlen($_SESSION['alogin'])=="")
                                  <div class="row">
                                     <div class="col-md-12">
                                         <div class="panel">
-                                            <div class="panel-heading">
+                                            <div class="panel-heading bg-primary">
                                                 <div class="panel-title">
                                                     <h5>View Students Info</h5>
+                                                    <div class="well-sm col-sm-12">
+                                                        <div class="btn-group pull-right">	
+                                                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">					
+                                                                <button type="submit" id="export_data" name='export_data' value="Export to excel" class="btn btn-info">Export to excel</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>	
                                                 </div>
                                             </div>
                         <?php if($msg){?>

@@ -1,5 +1,5 @@
-<div class="left-sidebar bg-black-300 box-shadow ">
-                        <div class="sidebar-content">
+                <div class="left-sidebar bg-black-300 box-shadow">
+                        <div class="sidebar-content bg-primary">
                             <div class="user-info closed">
                                 <img src="images/logo.png" alt="Tito" class="img-circle profile-img">
                                 <h6 class="title"></h6>
@@ -25,6 +25,7 @@
                                         <ul class="child-nav">
                                             <li><a href="add-memeber.php"><i class="fa fa-bars"></i> <span>የዕድር አባላት ይመዝግቡ</span></a></li>
                                             <li><a href="manage-member.php"><i class="fa fa fa-server"></i> <span>የዕድር አባላት ያስተዳድሩ</span></a></li>
+                                            <li><a href="died-member.php"><i class="fa fa fa-server"></i> <span>የሞቱ የዕድር አባላት</span></a></li>
                                            </ul>
                                     </li>
                                       <li class="has-children">
@@ -34,18 +35,18 @@
                                             <li><a href="manage-admin.php"><i class="fa fa fa-server"></i> <span>የዕድር አስተዳዳሪዎችን ያስተዳድሩ</span></a></li>
                                          </ul>
                                     </li>
-                                  <li class="has-children">
-                                 <a href="#"><i class="fa fa-file-text"></i> <span>የዕድሩ ሃብት</span> <i class="fa fa-angle-right arrow"></i></a>
-                                    <ul class="child-nav">
-                                    <li><a href="add-assets.php"><i class="fa fa-newspaper-o"></i> <span>የዕድር ሃብት ይመዝግቡ</span></a></li>
-                          <a href="manage-assets.php"><i class="fa fa-newspaper-o"></i> <span>የዕድሩን ሃብት ያስተዳድሩ</span></a></li>
+                                    <li class="has-children">
+                                    <a href="#"><i class="fa fa-file-text"></i> <span>የዕድሩ ሃብት</span> <i class="fa fa-angle-right arrow"></i></a>
+                                        <ul class="child-nav">
+                                            <li><a href="add-assets.php"><i class="fa fa-newspaper-o"></i> <span>የዕድር ሃብት ይመዝግቡ</span></a></li>
+                                          <a href="manage-assets.php"><i class="fa fa-newspaper-o"></i> <span>የዕድሩን ሃብት ያስተዳድሩ</span></a></li>
                                         </ul>
                                     </li>
                                     <li class="has-children">
                                         <a href="#"><i class="fa fa-users"></i> <span>ገቢ ውጪ</span> <i class="fa fa-angle-right arrow"></i></a>
                                         <ul class="child-nav">
                                             <li><a href="new-transaction.php"><i class="fa fa-bars"></i> <span>አዲስ ገቢ ውጪ</span></a></li>
-                                            <li><a href="manage-transaction.php"><i class="fa fa fa-server"></i> <span>ገቢ ውጪ አስተዳድር</span></a></li>
+                                            <li><a href="manage-transactions.php"><i class="fa fa fa-server"></i> <span>ገቢ ውጪ አስተዳድር</span></a></li>
                                            </ul>
                                     </li>
                                       <li class="has-children">
@@ -68,6 +69,7 @@
                                             <li><a href="add-attendance.php"><i class="fa fa-bars"></i> <span>አቴንዳንስ ያዝ</span></a></li>
                                             <li><a href="manage-attendance.php"><i class="fa fa fa-server"></i> <span>አቴንዳንስ አስተዳድር</span></a></li>
                                         </ul>
+                                        <li><a href="setting.php"><i class="fa fa fa-gear"></i> <span>መቼት</span></a></li>
                                         <li><a href="change-password.php"><i class="fa fa fa-server"></i> <span>የምስጢር ቃል ቀይር</span></a></li>
                                         <li><a href="logout.php"><i class="fa fa fa-sign-out"></i> <span>ዘግተህ ዉጣ</span></a></li>
                                            

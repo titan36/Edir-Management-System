@@ -8,6 +8,8 @@
 
         <!-- ========== PAGE JS FILES ========== -->
         <script src="js/prism/prism.js"></script>
+        
+       
         <script src="js/waypoint/waypoints.min.js"></script>
         <script src="js/counterUp/jquery.counterup.min.js"></script>
         <script src="js/amcharts/amcharts.js"></script>
@@ -23,4 +25,3 @@
         <script src="js/production-chart.js"></script>
         <script src="js/traffic-chart.js"></script>
         <script src="js/task-list.js"></script>
-       

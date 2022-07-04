@@ -2,6 +2,7 @@
 <?php
 session_start();
 error_reporting(0);
+
 include('../includes/config.php');
 if(strlen($_SESSION['alogin'])=="")
     {   
@@ -13,7 +14,10 @@ if(strlen($_SESSION['alogin'])=="")
         $sql = "delete from assets where id = '$id'";
         $dbh->exec($sql);
         header('location:manage-assets.php');   
-    }     
+    }  
+    
+    $table = 'assets'; 
+    include('export.php');
 
 ?>
 <!DOCTYPE html>
@@ -87,9 +91,16 @@ if(strlen($_SESSION['alogin'])=="")
                                  <div class="row">
                                     <div class="col-md-12">
                                         <div class="panel">
-                                            <div class="panel-heading">
+                                            <div class="panel-heading bg-primary">
                                                 <div class="panel-title">
                                                     <h5>View Assets Info</h5>
+                                                    <div class="well-sm col-sm-12">
+                                                        <div class="btn-group pull-right">	
+                                                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">					
+                                                                <button type="submit" id="export_data" name='export_data' value="Export to excel" class="btn btn-info">Export to excel</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>	
                                                 </div>
                                             </div>
                         <?php if($msg){?>
@@ -128,7 +139,8 @@ if(strlen($_SESSION['alogin'])=="")
                             if($query->rowCount() > 0)
                             {
                             foreach($results as $result)
-                            {   ?>
+                            { 
+                            ?>
 
                     <tr>
                     <td><?php echo htmlentities($cnt);?></td>
